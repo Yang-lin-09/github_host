@@ -7,7 +7,7 @@ import (
 	"regexp"
 	"strings"
 	"bufio"
-
+	"time"
 	"github.com/PuerkitoBio/goquery"
 )
 
@@ -58,7 +58,10 @@ func main() {
 	file_path := "./hosts"
 	host_map := get_host()
 
-	str := start_tag
+	time_unix := time.Now().Unix() 
+	str := time.Unix(time_unix, 0).Format("2006-01-02 15:04:05")
+	str = "# update on " + str + "\n"
+	str += start_tag
 	for _, domain := range domains {
 		str += host_map[domain] + " " + domain + "\n"
 	}
