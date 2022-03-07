@@ -1,1 +1,1 @@
-# github_host
+# GITHUB_HOST
