@@ -24,7 +24,6 @@ jobs:
 
     - name: Test
       run: ./github_host
-        rm github_host
     
     - name : commit
       run : |
