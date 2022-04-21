@@ -90,6 +90,7 @@ func get_host() map[string]string {
 		ch_rec := <-ch;
 		if ch_rec.Err != nil {
 			fmt.Println(ch_rec.Err.Error() + " " + ch_rec.Domain)
+			break
 		}
 
 		host_map[ch_rec.Domain] = ch_rec.IP
